@@ -22,12 +22,8 @@ public class ReadConfigFile {
         catch(IOException e) {
             e.printStackTrace();
         }
+        System.out.println(data);
         return data;
-    }
-
-    public String getDbname() {
-        HashMap<String, String> datafile = readFile("/Users/decagon/Desktop/Java/week-2-task-Beyond-Logic/src/Beyond/Logic/config.txt");
-        return datafile.get("dbname");
     }
 
 }
