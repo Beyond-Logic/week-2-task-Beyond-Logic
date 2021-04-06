@@ -1,7 +1,7 @@
 dbname=sq04_db
 host=127.0.0.1
 
-[application]
+
 name=fintek
 port=8080
 context-url=/api/v1
@@ -10,5 +10,5 @@ mode=production
 theme=green
 pipeline=fast
 
-[application]
+
 name=fintrack
