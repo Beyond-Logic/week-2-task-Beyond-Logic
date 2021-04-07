@@ -54,9 +54,6 @@ public class Environment {
             if (outputKey.equals(outputKey)) {
                 System.out.println("value is: " + keyMap.get(outputKey));
             }
-            if(keyMap.containsKey("name")) {
-                System.out.println("There are two names in this config files. The value you got is for the name in the last line.");
-            }
 
 
         }     catch (Exception e) {

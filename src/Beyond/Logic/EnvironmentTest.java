@@ -24,7 +24,7 @@ class EnvironmentTest extends Environment {
    @Test
    public void TestEnvironmentFileKey() {
        String keyName = "";
-       if(keyName.equalsIgnoreCase("dbname")){
+       if(keyName.equalsIgnoreCase(" ")){
            System.out.println("There is that key");
        }
    }
