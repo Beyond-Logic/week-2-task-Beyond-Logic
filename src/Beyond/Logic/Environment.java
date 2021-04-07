@@ -28,16 +28,19 @@ public class Environment {
         }
 
         //HasMap & Buffered Reader to access a config file base on the if else statement
-            String[]list;
+            String[]list = new String[]{};
             Map<String, String> keyMap = new HashMap<>();
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
 
             String keys;
             while ((keys=reader.readLine())!= null) {
-                if (keys.length() > 0) {
-                    System.out.println(keys);
+                if(keys.contains("=")){
                     list = keys.split("=");
+                }
+
+                if (list.length > 1) {
+                    System.out.println(keys);
                     keyMap.put(list[0], list[1]);
                 }
 
@@ -49,7 +52,10 @@ public class Environment {
             String outputKey = inputKey.nextLine().toLowerCase(Locale.ROOT);  // Read user input
 
             if (outputKey.equals(outputKey)) {
-                System.out.println("The value is: " + keyMap.get(outputKey));
+                System.out.println("value is: " + keyMap.get(outputKey));
+            }
+            if(keyMap.containsKey("name")) {
+                System.out.println("There are two names in this config files. The value you got is for the name in the last line.");
             }
 
 
