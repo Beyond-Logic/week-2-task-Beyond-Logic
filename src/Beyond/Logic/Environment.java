@@ -41,7 +41,17 @@ public class Environment {
 
                 if (list.length > 1) {
                     System.out.println(keys);
-                    keyMap.put(list[0], list[1]);
+                    if(list[0].equals("name")){
+                        list[0] = "application."+list[0];
+                    }
+                    if(list[0].equals("port")){
+                        list[0] = "application."+list[0];
+                    }
+
+                    if(list[0].equals("context-url")){
+                        list[0] = "application."+list[0];
+                    }
+                    keyMap.putIfAbsent(list[0], list[1]);
                 }
 
 
@@ -59,6 +69,7 @@ public class Environment {
         }     catch (Exception e) {
             e.printStackTrace();
         }
+
 
         System.out.println("Thank you for using my application");
 
